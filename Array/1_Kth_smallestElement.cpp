@@ -10,16 +10,19 @@ public:
 private: 
   int getPivoteEleIdx (int*const arr, int st, int end) 
   {
-    int pivote = arr[end]; 
+    int pivote = st + (end-st)/2; 
+
     int i=st; // point to index where next smaller element than pivote going to be placed 
 
     for (int j=st; j<=end; ++j){
-      if (arr[j] <= pivote) {
+      if (arr[j] < arr[pivote]) {
         std::swap(arr[i++], arr[j]); 
       }
     }
 
-    return i-1; // index where pivote element has been placed 
+    // Placing the pivote Element at its correct position 
+    std::swap(arr[pivote], arr[i]); 
+    return i; 
   }
 
   // Note:-
