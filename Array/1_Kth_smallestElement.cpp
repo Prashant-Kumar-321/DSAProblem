@@ -1,4 +1,5 @@
 #include<iostream>
+#include<random>
 using namespace std; 
 
 class kthSmallestElement{
@@ -8,9 +9,18 @@ public:
   }
 
 private: 
+  // Return randon integer value in the proved range
+  int rand(int min, int max){
+    std::random_device rd; 
+    std::mt19937 gen(rd()); // Seed the PRNG by random device 
+
+    std::uniform_int_distribution randomNum(min, max);
+    return randomNum(gen); 
+  }
+
   int getPivoteEleIdx (int*const arr, int st, int end) 
   {
-    int pivote = st + (end-st)/2; 
+    int pivote = rand(st, end); // Return a random number in the range [st, end]
 
     int i=st; // point to index where next smaller element than pivote going to be placed 
 
