@@ -9,7 +9,7 @@ public:
   }
 
 private: 
-  // Return randon integer value in the proved range
+  // Return randon integer value in the provided range
   int rand(int min, int max){
     std::random_device rd; 
     std::mt19937 gen(rd()); // Seed the PRNG by random device 
@@ -38,7 +38,7 @@ private:
   // Note:-
   // kth smallest element will be at (k-1)th index 
   // in the sorted array (ascending order)
-
+  // Quick Selection Algorithm 
   int getKthElement (int*const arr, int st, int end, const int& k){
     int pivoteIdx = getPivoteEleIdx(arr, st, end); 
 
