@@ -36,7 +36,6 @@ int findPosition (int arr[], int st, int end, const int& ele) // n => total numb
   return -1; 
 }
 
-
 int main(int argc, char** argv)
 {
   int arr[] = {0, 1, 2, 3, 5, 9, 12, 20}; 
