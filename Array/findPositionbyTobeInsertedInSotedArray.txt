@@ -1,0 +1,27 @@
+index ;   0,  1,  2,  3, 4, 5, 6,  7,    8,    9   10
+ arr [ ] = [ 0, 1, 2, 2,  4, 8, 8, 13, 18, 30       ]
+
+ele  = 7 / 18
+
+st  = 8; 
+end = 9; 
+mid = st + (end-st)/2;  // 7;  
+
+mid < ele < next
+element should be inserted at 5th(next) index 
+
+if (mid <= ele)
+	if (next >ele) -> next = arr[mid+1]
+		// ele should be placed at next pos. 
+		return mid+1; 
+	else 
+		// search position on the right side of mid
+		st = mid+1;  
+else if (mid > ele)
+	if (prev < ele) -> prev = arr[mid-1]
+		// ele should be placed at mid pos
+		return mid-1; 
+		
+	else 
+		// search positon on the left side of mid 
+		end  = mid-1; 

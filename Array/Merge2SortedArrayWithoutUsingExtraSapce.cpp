@@ -1,4 +1,9 @@
 
+/**
+ * Merge two Sorted array without using any extra space 
+ * Place first N element to arr1 and remaining element to arr2 
+*/
+
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -37,6 +42,11 @@ public:
       ++i;
     }
   }
+  // Time complexity O(NM)
+  // N for iterating over arr1 
+  // M for inserting each element of arr1 at its proper place in sorted arr2 
+
+
 
   // 2nd Approach 
   // Steps: 
@@ -52,7 +62,8 @@ public:
  // Time complexity O(nlogn + mlogm)
  void merge(int arr1[], int arr2[], int n, int m)
  {
-    int i=n-1 /*last element of arr1*/, j = 0; /*first element of arr2*/
+    int i=n-1; /*last element of arr1*/
+    int j = 0; /*first element of arr2*/
 
     // Move all greater element from arr1 to arr2 
     // and Move all smaller element from  arr2 ot arr1
