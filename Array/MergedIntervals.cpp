@@ -44,10 +44,11 @@ namespace Approach1
 
         return ans; 
     }
-    // time complexity is o(N^2); 
+    // time complexity is o(nlogn); 
     // Space complexity is O(N); 
   };
 }
+
 
 namespace Approach2
 {
