@@ -26,7 +26,13 @@ private:
 
     for (int j=st; j<=end; ++j){
       if (arr[j] < arr[pivote]) {
-        std::swap(arr[i++], arr[j]); 
+        std::swap(arr[i], arr[j]); 
+
+        if(i == pivote){
+          pivote = j; 
+        }
+
+        ++i; 
       }
     }
 
@@ -39,6 +45,7 @@ private:
   // kth smallest element will be at (k-1)th index 
   // in the sorted array (ascending order)
   // Quick Selection Algorithm 
+
   int getKthElement (int*const arr, int st, int end, const int& k){
     int pivoteIdx = getPivoteEleIdx(arr, st, end); 
 
@@ -63,7 +70,6 @@ int main (int argc, char** argv)
 
   kthSmallestElement kthSEle; 
   std::cout<< kthSEle.getKthElement(arr, n, 1)<< std::endl; 
-
 
   return 0; 
 }
