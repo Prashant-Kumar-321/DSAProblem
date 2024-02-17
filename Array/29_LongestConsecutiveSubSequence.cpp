@@ -31,6 +31,9 @@ public:
         currLen = 1;
       }
     }
+    // if there will be only one consecutive subsequence thenb 
+    // longestLen will never get updated 
+    // so i updated after termination of the loop 
     longestLen = max(longestLen, currLen);
     return longestLen;
   }
