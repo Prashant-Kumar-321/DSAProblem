@@ -1,4 +1,5 @@
 #include <iostream>
+#include<algorithm>
 #include <map>
 using namespace std;
 
@@ -99,6 +100,46 @@ public:
     }
     return false;
   }
+};
+
+class TwoPointer{
+public:
+  bool find3Numbers(int nums[], int n, int target)
+  {
+      sort(nums, nums+n); 
+      
+      for(int first=0; first<n-3; ++first)
+      {
+          // check whether two elements exist in the remaining 
+          // array whose sum is equal to (target-nums[first])
+          if(isTripletPossible(nums, n, target, first)){
+              return true; 
+          }
+      }
+      
+      return false; 
+  }
+  
+  bool isTripletPossible(int* arr, int n, int target, int f)
+  {
+      int l = f+1, r = n-1; 
+      while(l < r)
+      {
+          int sum = arr[f]+arr[l]+arr[r]; 
+          
+          if(sum == target){
+              return true; 
+          }
+          else if(sum > target){
+              r--;   
+          }else{
+              l++; 
+          }
+      }
+      
+      return false; 
+  }
+
 };
 
 int main()
