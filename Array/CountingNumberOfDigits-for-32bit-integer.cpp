@@ -1,8 +1,8 @@
-	#include<iostream>
-	using namespace std; 
+#include<iostream>
+using namespace std; 
 
-	// counting number of digits for 32-bit integer 
-    int countDigit(int num){
+// counting number of digits for 32-bit integer 
+int countDigit(int num){
 		if(num < 0) return countDigit(-num); 
 
         return  (num < 10 ? 1:
@@ -16,7 +16,7 @@
 				(num < 1000000000? 9: 10))))))))); 
     }
 
-	int countDigit(long long num){
+int countDigit(long long num){
 		if(num < 0) num *= -1; 
 
 		return (num < 10 ? 1: 
